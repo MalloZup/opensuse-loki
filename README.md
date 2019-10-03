@@ -77,10 +77,41 @@ table_manager:
 
 
 4) Run loki
-loki  -config.file=/etc/loki/local-config.yaml
+`loki  -config.file=/etc/loki/local-config.yaml`
 
 
 ## Configure promtail
 
 1) install https://github.com/grafana/loki/blob/master/docs/clients/promtail/installation.md
+
+
+2) `mkdir /etc/promtail`
+   create a file like `/etc/promtail/job0.yaml`
+   
+   ```
+   server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://localhost:3100/loki/api/v1/push
+
+scrape_configs:
+ - job_name: zypper
+   static_configs:
+   - targets:
+      - localhost
+     labels:
+      job: varlogs
+      host: opensusehost
+      __path__: /var/log/zypper.log
+```
+
+run with ` promtail -config.file /etc/promtail/journal-config.yaml`
+
+(I assume both are on same host)
+
 
