@@ -109,7 +109,7 @@ scrape_configs:
       __path__: /var/log/zypper.log
 ```
 
-run with ` promtail -config.file /etc/promtail/journal-config.yaml`
+run with ` promtail -config.file /etc/promtail/job0.yaml`
 
 (I assume both are on same host)
 
