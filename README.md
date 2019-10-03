@@ -4,6 +4,10 @@ Minimal openSUSE documentation for running loki grafana
 
 https://github.com/grafana/loki#loki-like-prometheus-but-for-logs
 
+# Warning:
+Currently I get 404 on loki server, still investigating on issue
+
+
 # Howto:
 
 1) install grafana and prometheus on a vm  or your system
