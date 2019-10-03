@@ -15,9 +15,9 @@ https://github.com/grafana/loki#loki-like-prometheus-but-for-logs
 
 `mkdir /etc/loki`
 
-`touch local-config.yaml`
+`touch /etc/loki/local-config.yaml`
 
-paste following content
+paste following content into /etc/loki/local-config.yaml
 ```
 auth_enabled: false
 
@@ -78,3 +78,9 @@ table_manager:
 
 4) Run loki
 loki  -config.file=/etc/loki/local-config.yaml
+
+
+## Configure promtail
+
+1) install https://github.com/grafana/loki/blob/master/docs/clients/promtail/installation.md
+
