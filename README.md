@@ -89,7 +89,7 @@ table_manager:
 2) `mkdir /etc/promtail`
    create a file like `/etc/promtail/job0.yaml`
 ```
-   server:
+server:
   http_listen_port: 9080
   grpc_listen_port: 0
 
@@ -97,17 +97,17 @@ positions:
   filename: /tmp/positions.yaml
 
 clients:
-  - url: http://localhost:3100/loki/api/v1/push
+  - url: http://localhost:3100/api/prom/push
 
 scrape_configs:
- - job_name: zypper
-   static_configs:
-   - targets:
+- job_name: system
+  static_configs:
+  - targets:
       - localhost
-     labels:
+    labels:
       job: varlogs
-      host: opensusehost
-      __path__: /var/log/zypper.log
+      __path__: /var/log/*log
+
 ```
 
 run with ` promtail -config.file /etc/promtail/job0.yaml`
