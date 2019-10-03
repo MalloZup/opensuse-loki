@@ -87,8 +87,7 @@ table_manager:
 
 2) `mkdir /etc/promtail`
    create a file like `/etc/promtail/job0.yaml`
-   
-   ```
+```
    server:
   http_listen_port: 9080
   grpc_listen_port: 0
