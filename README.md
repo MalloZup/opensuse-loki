@@ -15,7 +15,7 @@ You can get the rpm via this repo:
 ### 2) Install loki and promtail from rpms packages from repo:
 `https://build.opensuse.org/package/show/server:monitoring/loki`
 
-Add the repository for your systemd and install the pkg
+Add the repository for your system and install the pkg
 `zypper in loki`
 
 
